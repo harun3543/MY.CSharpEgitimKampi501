@@ -48,6 +48,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblProductMaxPrice = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblProductCategoryDistinct = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             // 
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(103, 136);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(147, 45);
             this.btnAdd.TabIndex = 0;
@@ -77,7 +79,7 @@
             // txtProductId
             // 
             this.txtProductId.Location = new System.Drawing.Point(103, 10);
-            this.txtProductId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductId.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(148, 20);
             this.txtProductId.TabIndex = 2;
@@ -85,7 +87,7 @@
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(103, 32);
-            this.txtProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductName.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(148, 20);
             this.txtProductName.TabIndex = 4;
@@ -103,7 +105,7 @@
             // txtProductPrice
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(103, 55);
-            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductPrice.Name = "txtProductPrice";
             this.txtProductPrice.Size = new System.Drawing.Size(148, 20);
             this.txtProductPrice.TabIndex = 6;
@@ -121,7 +123,7 @@
             // txtProductStock
             // 
             this.txtProductStock.Location = new System.Drawing.Point(103, 78);
-            this.txtProductStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductStock.Name = "txtProductStock";
             this.txtProductStock.Size = new System.Drawing.Size(148, 20);
             this.txtProductStock.TabIndex = 8;
@@ -139,7 +141,7 @@
             // txtProductCategory
             // 
             this.txtProductCategory.Location = new System.Drawing.Point(103, 101);
-            this.txtProductCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductCategory.Name = "txtProductCategory";
             this.txtProductCategory.Size = new System.Drawing.Size(148, 20);
             this.txtProductCategory.TabIndex = 10;
@@ -158,7 +160,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(103, 186);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(147, 45);
             this.btnUpdate.TabIndex = 11;
@@ -170,7 +172,7 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(103, 236);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(147, 45);
             this.btnDelete.TabIndex = 12;
@@ -182,7 +184,7 @@
             // 
             this.btnList.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnList.Location = new System.Drawing.Point(103, 285);
-            this.btnList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnList.Margin = new System.Windows.Forms.Padding(2);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(147, 45);
             this.btnList.TabIndex = 13;
@@ -194,7 +196,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(254, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -226,14 +228,16 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Yellow;
+            this.groupBox1.Controls.Add(this.lblProductCategoryDistinct);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.lblProductMaxPrice);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lblProductTotalCount);
             this.groupBox1.Location = new System.Drawing.Point(9, 335);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(914, 213);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
@@ -260,6 +264,28 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "En Pahalı Kitap:";
             // 
+            // lblProductCategoryDistinct
+            // 
+            this.lblProductCategoryDistinct.AutoSize = true;
+            this.lblProductCategoryDistinct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductCategoryDistinct.Location = new System.Drawing.Point(180, 94);
+            this.lblProductCategoryDistinct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProductCategoryDistinct.Name = "lblProductCategoryDistinct";
+            this.lblProductCategoryDistinct.Size = new System.Drawing.Size(17, 19);
+            this.lblProductCategoryDistinct.TabIndex = 20;
+            this.lblProductCategoryDistinct.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(35, 94);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(117, 19);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Kategori Sayısı:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,7 +307,7 @@
             this.Controls.Add(this.txtProductId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -314,6 +340,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblProductMaxPrice;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblProductCategoryDistinct;
+        private System.Windows.Forms.Label label9;
     }
 }
 

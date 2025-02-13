@@ -37,6 +37,11 @@ namespace CSharpEgitimKampi501Form
             var productMaxPrice = await connection.QueryFirstAsync<string>(query2);
             lblProductMaxPrice.Text = productMaxPrice.ToString();
 
+            // kaç tane category çeşidi var
+            //
+            string query3 = "Select Count(Distinct(ProductCategory)) from TblProduct";
+            var productCategoryDistinct = await connection.QueryFirstAsync<int>(query3);
+            lblProductCategoryDistinct.Text = productCategoryDistinct.ToString();
 
         }
 
