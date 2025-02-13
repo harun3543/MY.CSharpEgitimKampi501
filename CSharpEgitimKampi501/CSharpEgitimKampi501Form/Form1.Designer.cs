@@ -46,10 +46,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblProductTotalCount = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblProductMaxPrice = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblProductCategoryDistinct = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblProductMaxPrice = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnGetById = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -234,35 +235,13 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lblProductTotalCount);
-            this.groupBox1.Location = new System.Drawing.Point(9, 335);
+            this.groupBox1.Location = new System.Drawing.Point(9, 410);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(914, 213);
+            this.groupBox1.Size = new System.Drawing.Size(914, 138);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
-            // 
-            // lblProductMaxPrice
-            // 
-            this.lblProductMaxPrice.AutoSize = true;
-            this.lblProductMaxPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductMaxPrice.Location = new System.Drawing.Point(180, 61);
-            this.lblProductMaxPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblProductMaxPrice.Name = "lblProductMaxPrice";
-            this.lblProductMaxPrice.Size = new System.Drawing.Size(17, 19);
-            this.lblProductMaxPrice.TabIndex = 18;
-            this.lblProductMaxPrice.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 61);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 19);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "En Pahalı Kitap:";
             // 
             // lblProductCategoryDistinct
             // 
@@ -286,11 +265,46 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "Kategori Sayısı:";
             // 
+            // lblProductMaxPrice
+            // 
+            this.lblProductMaxPrice.AutoSize = true;
+            this.lblProductMaxPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductMaxPrice.Location = new System.Drawing.Point(180, 61);
+            this.lblProductMaxPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProductMaxPrice.Name = "lblProductMaxPrice";
+            this.lblProductMaxPrice.Size = new System.Drawing.Size(17, 19);
+            this.lblProductMaxPrice.TabIndex = 18;
+            this.lblProductMaxPrice.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(35, 61);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(118, 19);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "En Pahalı Kitap:";
+            // 
+            // btnGetById
+            // 
+            this.btnGetById.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGetById.Location = new System.Drawing.Point(104, 334);
+            this.btnGetById.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGetById.Name = "btnGetById";
+            this.btnGetById.Size = new System.Drawing.Size(147, 45);
+            this.btnGetById.TabIndex = 18;
+            this.btnGetById.Text = "Id\'ye göre getir";
+            this.btnGetById.UseVisualStyleBackColor = true;
+            this.btnGetById.Click += new System.EventHandler(this.btnGetById_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 557);
+            this.Controls.Add(this.btnGetById);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnList);
@@ -342,6 +356,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblProductCategoryDistinct;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnGetById;
     }
 }
 

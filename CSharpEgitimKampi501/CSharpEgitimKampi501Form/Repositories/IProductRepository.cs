@@ -13,6 +13,6 @@ namespace CSharpEgitimKampi501.Repositories
         Task CreateProductAsync(CreateProductDto createProductDto);
         Task UpdateProductAsync(UpdateProductDto updateProductDto);
         Task DeleteProductAsync(int id);
-        Task GetByProductId(int id);
+        Task<IEnumerable<ResultProductDto>> GetByProductId(int id);
     }
 }

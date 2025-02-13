@@ -61,35 +61,62 @@ namespace CSharpEgitimKampi501Form
             string query = "Insert into TblProduct (ProductName,ProductCategory,ProductStock,ProductPrice) values (@productName,@productCategory,@productStock,@productPrice)";
 
             // yukarıdaki @ ifadesi ile başlayan parametreleri doldurmak için kullandık.
-            var parameters = new DynamicParameters();
-            parameters.Add("@productName", txtProductName.Text);
-            parameters.Add("@productCategory", txtProductCategory.Text);
-            parameters.Add("@productStock", txtProductStock.Text);
-            parameters.Add("@productPrice", txtProductPrice.Text);
-            await connection.ExecuteAsync(query, parameters);
+            //var parameters = new DynamicParameters();
+            //parameters.Add("@productName", txtProductName.Text);
+            //parameters.Add("@productCategory", txtProductCategory.Text);
+            //parameters.Add("@productStock", txtProductStock.Text);
+            //parameters.Add("@productPrice", txtProductPrice.Text);
+            //await connection.ExecuteAsync(query, parameters);
+
+            await productRepository.CreateProductAsync(new CreateProductDto
+            {
+                 ProductName = txtProductName.Text,
+                 ProductCategory = txtProductCategory.Text,
+                 ProductStock = txtProductStock.Text,
+                 ProductPrice = decimal.Parse(txtProductPrice.Text),
+            });
+
             MessageBox.Show("Başarılı bir şekilde eklendi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            string query = "Update TblProduct Set ProductName=@productName,ProductCategory=@productCategory,ProductStock=@productStock,ProductPrice=@productPrice Where Id=@productId";
-            var parameters = new DynamicParameters();
-            parameters.Add("@productId", txtProductId.Text);
-            parameters.Add("@productName", txtProductName.Text);
-            parameters.Add("@productCategory", txtProductCategory.Text);
-            parameters.Add("@productStock", txtProductStock.Text);
-            parameters.Add("@productPrice", txtProductPrice.Text);
-            await connection.ExecuteAsync(query, parameters);
+            //string query = "Update TblProduct Set ProductName=@productName,ProductCategory=@productCategory,ProductStock=@productStock,ProductPrice=@productPrice Where Id=@productId";
+            //var parameters = new DynamicParameters();
+            //parameters.Add("@productId", txtProductId.Text);
+            //parameters.Add("@productName", txtProductName.Text);
+            //parameters.Add("@productCategory", txtProductCategory.Text);
+            //parameters.Add("@productStock", txtProductStock.Text);
+            //parameters.Add("@productPrice", txtProductPrice.Text);
+            //await connection.ExecuteAsync(query, parameters);
+
+            await productRepository.UpdateProductAsync(new UpdateProductDto
+            {
+                Id = int.Parse(txtProductId.Text),
+                ProductName = txtProductName.Text,
+                ProductCategory = txtProductCategory.Text,
+                ProductStock = txtProductStock.Text,
+                ProductPrice = decimal.Parse(txtProductPrice.Text)
+
+            });
             MessageBox.Show("Başarılı bir şekilde güncellendi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-            string query = "Delete from TblProduct Where Id=@productId";
-            var parameters = new DynamicParameters();
-            parameters.Add("@productId", txtProductId.Text);
-            await connection.ExecuteAsync(query, parameters);
+            //string query = "Delete from TblProduct Where Id=@productId";
+            //var parameters = new DynamicParameters();
+            //parameters.Add("@productId", txtProductId.Text);
+            //await connection.ExecuteAsync(query, parameters);
+
+            productRepository.DeleteProductAsync(int.Parse(txtProductId.Text));
             MessageBox.Show("Başarılı bir şekilde silindi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private async void btnGetById_Click(object sender, EventArgs e)
+        {
+            var value = await productRepository.GetByProductId(int.Parse(txtProductId.Text));
+            dataGridView1.DataSource = value;
         }
     }
 }
